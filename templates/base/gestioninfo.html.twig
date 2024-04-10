@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   {% block stylesheets %}
+    <!-- Bootstrap CSS -->
+    <link href="https://bootswatch.com/5/lumen/bootstrap.min.css" rel="stylesheet">
+   {% endblock %}
+    <title>{% block title %}la gestion informatique{% endblock %}</title>
+  </head>
+  <body>
+
+      {% block body %}
+      <h2> La gestion informatique </h2>
+      
+      <h5>
+      La DSI (Direction des Services Informatiques) est une entité importante de la structure Europe qui
+participe aux choix stratégiques. 
+Pour Swiss-Bourdin, qui occupait le siège parisien avant la fusion, l'outil informatique et l'utilisation
+d'outils décisionnels pour améliorer la vision et la planification de l'activité ont toujours fait partie de la
+politique maison, en particulier pour ce qui concerne la partie recherche, production, communication et
+juridique.
+La partie commerciale a été le parent pauvre de cette informatisation, les visiteurs étant vus
+comme des acteurs distants autonomes. La DSI a convaincu l'entreprise que l'intégration des
+données fournies par cette partie aura un impact important sur l'ensemble de l'activité. 
+        </h5>
+        <br>
+        <br>
+        <br>
+        <br>
+        <a href="{{path('index')}}" class="btn btn-primary"> Accueil </a>
+      {% endblock %} 
+   
+    {% block javascripts %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    {% endblock %}
+  </body>
+</html>

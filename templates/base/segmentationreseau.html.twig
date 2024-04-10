@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   {% block stylesheets %}
+    <!-- Bootstrap CSS -->
+    <link href="https://bootswatch.com/5/lumen/bootstrap.min.css" rel="stylesheet">
+   {% endblock %}
+    <title>{% block title %}segmentation du reseau{% endblock %}</title>
+  </head>
+  <body>
+
+      {% block body %}
+      <h2> La segmentation du reseau </h2>
+      
+      <h5>L'organisation des VLAN et de l'adressage IP est la suivante :</h5>
+      <img src="../../public/images/ip.png"></img>
+      <h5>Les règles actuelles concernant les vlans sont les suivantes :</h5>
+      <ul> 
+      <li>chaque vlan (sauf le vlan visiteur) peut uniquement accéder (quel que soit le protocole) aux vlans "Serveurs" et "Sortie";</li>
+      <li> le vlan "Visiteurs" peut uniquement interroger les serveur DNS et DHCP et sortir sur internet ;</li>
+      </ul>
+        <br>
+        <br>
+        <br>
+        <a href="{{path('index')}}" class="btn btn-primary"> Accueil </a>
+      {% endblock %} 
+   
+    {% block javascripts %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    {% endblock %}
+  </body>
+</html>

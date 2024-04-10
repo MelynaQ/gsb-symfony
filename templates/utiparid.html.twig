@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Info utilisateur{% endblock %}
+
+{% block body %}
+<h1>information de {{uti.prenom}} {{uti.nom}}</h1>
+<br>
+<h2>vivant à {{uti.ville}} ({{uti.cp}}), {{uti.adresse}} </h2>
+<br>
+<h2>et embauché(e) le {{uti.dateEmbauche | date("d-m-Y") }}</h2>
+<br>
+{% if uti.ficherais %}
+    <h3>Ses fiches frais : </h3>
+    <ul>
+        {% for fiche in uti.ficherais %}
+            <li>au mois de {{ fiche.mois }} avec {{fiche.nbJustificatifs}} justificatifs 
+            pour montant {{fiche.montantValide}}€ </li>
+            cette fiche a été modifiée pour la dernière fois le {{fiche.dateModif | date("d-m-Y")}}
+        <br>  
+        <br>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Aucune fiche de frais trouvée pour cet utilisateur.</p>
+{% endif %}
+
+    
+{% endblock %}
